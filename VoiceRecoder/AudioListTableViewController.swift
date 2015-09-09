@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AudioListTableViewController: UITableViewController {
+class AudioListTableViewController: UITableViewController,UITableViewDelegate, UITableViewDataSource {
     
     private var audioList:[[String:String]]!
     let cellIdentifier = "ApplicationCell"
@@ -59,9 +59,7 @@ class AudioListTableViewController: UITableViewController {
         var dataitem = audioList?[indexPath.row]
         cell.label1.text = dataitem?["audioName"]
         cell.label2.text = dataitem?["audioLength"]
-
         cell.backgroundColor = UIColor.clearColor()
-        
         return cell
     }
     
@@ -73,7 +71,11 @@ class AudioListTableViewController: UITableViewController {
         return true
     }
     */
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var playerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AudioPlayViewController") as! AudioPlayViewController
+        playerVC.selectIndex = indexPath.row
+        navigationController?.pushViewController(playerVC, animated: true)
+    }
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -88,15 +90,6 @@ class AudioListTableViewController: UITableViewController {
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
-    }
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
     }
     
 

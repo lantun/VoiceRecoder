@@ -292,7 +292,7 @@
         <!--Audio Player-->
         <scene sceneID="ibg-jh-9MM">
             <objects>
-                <viewController id="HMB-3C-NsJ" customClass="AudioPlayViewController" customModule="VoiceRecoder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AudioPlayViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HMB-3C-NsJ" customClass="AudioPlayViewController" customModule="VoiceRecoder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g5c-f8-pj0"/>
                         <viewControllerLayoutGuide type="bottom" id="5jU-6f-1Wv"/>
