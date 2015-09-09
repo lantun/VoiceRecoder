@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED91DF141B9C893B0011A7D1 /* AudioListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED91DF121B9C893B0011A7D1 /* AudioListTableViewCell.swift */; };
+		ED91DF151B9C893B0011A7D1 /* AudioListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED91DF131B9C893B0011A7D1 /* AudioListTableViewCell.xib */; };
+		EDA4FB8C1B9AD87F00D1DCF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4FB8B1B9AD87F00D1DCF9 /* AppDelegate.swift */; };
+		EDA4FB911B9AD87F00D1DCF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA4FB8F1B9AD87F00D1DCF9 /* Main.storyboard */; };
+		EDA4FB931B9AD87F00D1DCF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA4FB921B9AD87F00D1DCF9 /* Images.xcassets */; };
+		EDA4FB961B9AD87F00D1DCF9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA4FB941B9AD87F00D1DCF9 /* LaunchScreen.xib */; };
+		EDA4FBA21B9AD87F00D1DCF9 /* VoiceRecoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4FBA11B9AD87F00D1DCF9 /* VoiceRecoderTests.swift */; };
+		EDA4FBAC1B9AE66B00D1DCF9 /* AudioListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4FBAB1B9AE66B00D1DCF9 /* AudioListTableViewController.swift */; };
+		EDA4FBB21B9AE9E000D1DCF9 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4FBB11B9AE9E000D1DCF9 /* Macro.swift */; };
+		EDA4FBB61B9AFE3000D1DCF9 /* AudioRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4FBB51B9AFE3000D1DCF9 /* AudioRecorderViewController.swift */; };
+		EDC8869B1B9D69AF00364400 /* AudioPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8869A1B9D69AF00364400 /* AudioPlayViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDA4FB9C1B9AD87F00D1DCF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDA4FB7E1B9AD87F00D1DCF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDA4FB851B9AD87F00D1DCF9;
+			remoteInfo = VoiceRecoder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED91DF121B9C893B0011A7D1 /* AudioListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioListTableViewCell.swift; sourceTree = "<group>"; };
+		ED91DF131B9C893B0011A7D1 /* AudioListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioListTableViewCell.xib; sourceTree = "<group>"; };
+		EDA4FB861B9AD87F00D1DCF9 /* VoiceRecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceRecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA4FB8A1B9AD87F00D1DCF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDA4FB8B1B9AD87F00D1DCF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDA4FB901B9AD87F00D1DCF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDA4FB921B9AD87F00D1DCF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EDA4FB951B9AD87F00D1DCF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EDA4FB9B1B9AD87F00D1DCF9 /* VoiceRecoderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceRecoderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA4FBA01B9AD87F00D1DCF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDA4FBA11B9AD87F00D1DCF9 /* VoiceRecoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecoderTests.swift; sourceTree = "<group>"; };
+		EDA4FBAB1B9AE66B00D1DCF9 /* AudioListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioListTableViewController.swift; sourceTree = "<group>"; };
+		EDA4FBB11B9AE9E000D1DCF9 /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
+		EDA4FBB51B9AFE3000D1DCF9 /* AudioRecorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorderViewController.swift; sourceTree = "<group>"; };
+		EDC8869A1B9D69AF00364400 /* AudioPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDA4FB831B9AD87F00D1DCF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA4FB981B9AD87F00D1DCF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDA4FB7D1B9AD87F00D1DCF9 = {
+			isa = PBXGroup;
+			children = (
+				EDA4FB881B9AD87F00D1DCF9 /* VoiceRecoder */,
+				EDA4FB9E1B9AD87F00D1DCF9 /* VoiceRecoderTests */,
+				EDA4FB871B9AD87F00D1DCF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDA4FB871B9AD87F00D1DCF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDA4FB861B9AD87F00D1DCF9 /* VoiceRecoder.app */,
+				EDA4FB9B1B9AD87F00D1DCF9 /* VoiceRecoderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDA4FB881B9AD87F00D1DCF9 /* VoiceRecoder */ = {
+			isa = PBXGroup;
+			children = (
+				EDA4FB8B1B9AD87F00D1DCF9 /* AppDelegate.swift */,
+				EDA4FB8F1B9AD87F00D1DCF9 /* Main.storyboard */,
+				EDA4FB921B9AD87F00D1DCF9 /* Images.xcassets */,
+				EDA4FB941B9AD87F00D1DCF9 /* LaunchScreen.xib */,
+				EDA4FB891B9AD87F00D1DCF9 /* Supporting Files */,
+				EDA4FBAB1B9AE66B00D1DCF9 /* AudioListTableViewController.swift */,
+				EDA4FBB11B9AE9E000D1DCF9 /* Macro.swift */,
+				EDA4FBB51B9AFE3000D1DCF9 /* AudioRecorderViewController.swift */,
+				ED91DF121B9C893B0011A7D1 /* AudioListTableViewCell.swift */,
+				ED91DF131B9C893B0011A7D1 /* AudioListTableViewCell.xib */,
+				EDC8869A1B9D69AF00364400 /* AudioPlayViewController.swift */,
+			);
+			path = VoiceRecoder;
+			sourceTree = "<group>";
+		};
+		EDA4FB891B9AD87F00D1DCF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDA4FB8A1B9AD87F00D1DCF9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDA4FB9E1B9AD87F00D1DCF9 /* VoiceRecoderTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDA4FBA11B9AD87F00D1DCF9 /* VoiceRecoderTests.swift */,
+				EDA4FB9F1B9AD87F00D1DCF9 /* Supporting Files */,
+			);
+			path = VoiceRecoderTests;
+			sourceTree = "<group>";
+		};
+		EDA4FB9F1B9AD87F00D1DCF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDA4FBA01B9AD87F00D1DCF9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDA4FB851B9AD87F00D1DCF9 /* VoiceRecoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDA4FBA51B9AD87F00D1DCF9 /* Build configuration list for PBXNativeTarget "VoiceRecoder" */;
+			buildPhases = (
+				EDA4FB821B9AD87F00D1DCF9 /* Sources */,
+				EDA4FB831B9AD87F00D1DCF9 /* Frameworks */,
+				EDA4FB841B9AD87F00D1DCF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoiceRecoder;
+			productName = VoiceRecoder;
+			productReference = EDA4FB861B9AD87F00D1DCF9 /* VoiceRecoder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDA4FB9A1B9AD87F00D1DCF9 /* VoiceRecoderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDA4FBA81B9AD87F00D1DCF9 /* Build configuration list for PBXNativeTarget "VoiceRecoderTests" */;
+			buildPhases = (
+				EDA4FB971B9AD87F00D1DCF9 /* Sources */,
+				EDA4FB981B9AD87F00D1DCF9 /* Frameworks */,
+				EDA4FB991B9AD87F00D1DCF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDA4FB9D1B9AD87F00D1DCF9 /* PBXTargetDependency */,
+			);
+			name = VoiceRecoderTests;
+			productName = VoiceRecoderTests;
+			productReference = EDA4FB9B1B9AD87F00D1DCF9 /* VoiceRecoderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDA4FB7E1B9AD87F00D1DCF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = LanTun;
+				TargetAttributes = {
+					EDA4FB851B9AD87F00D1DCF9 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					EDA4FB9A1B9AD87F00D1DCF9 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = EDA4FB851B9AD87F00D1DCF9;
+					};
+				};
+			};
+			buildConfigurationList = EDA4FB811B9AD87F00D1DCF9 /* Build configuration list for PBXProject "VoiceRecoder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDA4FB7D1B9AD87F00D1DCF9;
+			productRefGroup = EDA4FB871B9AD87F00D1DCF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDA4FB851B9AD87F00D1DCF9 /* VoiceRecoder */,
+				EDA4FB9A1B9AD87F00D1DCF9 /* VoiceRecoderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDA4FB841B9AD87F00D1DCF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED91DF151B9C893B0011A7D1 /* AudioListTableViewCell.xib in Resources */,
+				EDA4FB911B9AD87F00D1DCF9 /* Main.storyboard in Resources */,
+				EDA4FB961B9AD87F00D1DCF9 /* LaunchScreen.xib in Resources */,
+				EDA4FB931B9AD87F00D1DCF9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA4FB991B9AD87F00D1DCF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDA4FB821B9AD87F00D1DCF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED91DF141B9C893B0011A7D1 /* AudioListTableViewCell.swift in Sources */,
+				EDA4FBAC1B9AE66B00D1DCF9 /* AudioListTableViewController.swift in Sources */,
+				EDA4FBB61B9AFE3000D1DCF9 /* AudioRecorderViewController.swift in Sources */,
+				EDA4FBB21B9AE9E000D1DCF9 /* Macro.swift in Sources */,
+				EDA4FB8C1B9AD87F00D1DCF9 /* AppDelegate.swift in Sources */,
+				EDC8869B1B9D69AF00364400 /* AudioPlayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA4FB971B9AD87F00D1DCF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA4FBA21B9AD87F00D1DCF9 /* VoiceRecoderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDA4FB9D1B9AD87F00D1DCF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDA4FB851B9AD87F00D1DCF9 /* VoiceRecoder */;
+			targetProxy = EDA4FB9C1B9AD87F00D1DCF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDA4FB8F1B9AD87F00D1DCF9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDA4FB901B9AD87F00D1DCF9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EDA4FB941B9AD87F00D1DCF9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDA4FB951B9AD87F00D1DCF9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDA4FBA31B9AD87F00D1DCF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDA4FBA41B9AD87F00D1DCF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDA4FBA61B9AD87F00D1DCF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VoiceRecoder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EDA4FBA71B9AD87F00D1DCF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VoiceRecoder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EDA4FBA91B9AD87F00D1DCF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VoiceRecoderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceRecoder.app/VoiceRecoder";
+			};
+			name = Debug;
+		};
+		EDA4FBAA1B9AD87F00D1DCF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VoiceRecoderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceRecoder.app/VoiceRecoder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDA4FB811B9AD87F00D1DCF9 /* Build configuration list for PBXProject "VoiceRecoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA4FBA31B9AD87F00D1DCF9 /* Debug */,
+				EDA4FBA41B9AD87F00D1DCF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDA4FBA51B9AD87F00D1DCF9 /* Build configuration list for PBXNativeTarget "VoiceRecoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA4FBA61B9AD87F00D1DCF9 /* Debug */,
+				EDA4FBA71B9AD87F00D1DCF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDA4FBA81B9AD87F00D1DCF9 /* Build configuration list for PBXNativeTarget "VoiceRecoderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA4FBA91B9AD87F00D1DCF9 /* Debug */,
+				EDA4FBAA1B9AD87F00D1DCF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDA4FB7E1B9AD87F00D1DCF9 /* Project object */;
+}
