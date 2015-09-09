@@ -31,7 +31,6 @@ class AudioRecorderViewController: UIViewController,AVAudioRecorderDelegate {
 
         secondCount = 0
         totalSecond = 0
-        audioProgressBar.progress = 0.0
         recordTimeLabel.text = "00:00:00"
         isRecordingSave = false
         // Do any additional setup after loading the view.
@@ -125,7 +124,7 @@ class AudioRecorderViewController: UIViewController,AVAudioRecorderDelegate {
     
     func progressBarAction() {
         audioRecorder!.updateMeters()
-        var peakPowerForChannel = pow(10, (0.05*audioRecorder!.peakPowerForChannel(0)))
+        var peakPowerForChannel = pow(10, (0.1*audioRecorder!.peakPowerForChannel(0)))
         if peakPowerForChannel <= 1.0 {
             audioProgressBar.progress = peakPowerForChannel
         }

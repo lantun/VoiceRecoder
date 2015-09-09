@@ -43,6 +43,13 @@ class AudioPlayViewController: UIViewController,AVAudioPlayerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    override func viewDidDisappear(animated: Bool) {
+        
+        var session = AVAudioSession.sharedInstance()
+        session.setActive(false, error: nil)
+        stopAudioAction(0)
+        super.viewDidDisappear(true)
+    }
     @IBAction func nextAudioAction(sender: AnyObject) {
         if currentIndex < audioList.count-1 {
             currentIndex = currentIndex+1
@@ -92,6 +99,8 @@ class AudioPlayViewController: UIViewController,AVAudioPlayerDelegate {
                 audioPlayer.pause()
                 playPauseBtn.setTitle("Play Audio", forState: UIControlState.Normal)
             }
+        }else{
+            stopPlaying()
         }
     }
     @IBAction func audioSliderAction(sender: AnyObject) {
@@ -113,7 +122,7 @@ class AudioPlayViewController: UIViewController,AVAudioPlayerDelegate {
         var fileName: String! = currentAudioItem["audioName"]
         audioNameLabel.text = fileName
         audioLengthLabel.text = currentAudioItem["audioLength"]
-        audioRemainLengthLabel.text = "-\(audioLengthLabel.text)"
+        audioRemainLengthLabel.text = audioLengthLabel.text
         
         secondCount = 0;
         audioTotalSecond = currentAudioItem["audioTotalSecond"]!.toInt()
