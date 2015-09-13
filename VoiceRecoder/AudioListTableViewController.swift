@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AudioListTableViewController: UITableViewController,UITableViewDelegate, UITableViewDataSource {
+class AudioListTableViewController: UITableViewController {
     
     private var audioList:[[String:String]]!
     let cellIdentifier = "ApplicationCell"
@@ -35,8 +35,15 @@ class AudioListTableViewController: UITableViewController,UITableViewDelegate, U
             audioList?.removeAll(keepCapacity: false)
         }
         NSUserDefaults.standardUserDefaults()
-        audioList = Macro.prefs.objectForKey(Macro.saveKey) as! [[String:String]]
-        listtable.reloadData()
+        if (Macro.prefs.objectForKey(Macro.saveKey) != nil) {
+            audioList = Macro.prefs.objectForKey(Macro.saveKey) as? [[String:String]]
+            listtable.reloadData()
+            
+        }else{
+            audioList = []
+            print("no save")
+        }
+        
     }
     
     // MARK: - Table view data source
@@ -46,8 +53,8 @@ class AudioListTableViewController: UITableViewController,UITableViewDelegate, U
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var rownum = audioList.count
-        println("row:\(rownum)")
+        let rownum = audioList!.count
+        print("row:\(rownum)")
         return rownum
     }
 
@@ -56,7 +63,7 @@ class AudioListTableViewController: UITableViewController,UITableViewDelegate, U
         
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! AudioListTableViewCell
-        var dataitem = audioList?[indexPath.row]
+        let dataitem = audioList?[indexPath.row]
         cell.label1.text = dataitem?["audioName"]
         cell.label2.text = dataitem?["audioLength"]
         cell.backgroundColor = UIColor.clearColor()
@@ -72,7 +79,7 @@ class AudioListTableViewController: UITableViewController,UITableViewDelegate, U
     }
     */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var playerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AudioPlayViewController") as! AudioPlayViewController
+        let playerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("AudioPlayViewController") as! AudioPlayViewController
         playerVC.selectIndex = indexPath.row
         navigationController?.pushViewController(playerVC, animated: true)
     }
@@ -80,10 +87,10 @@ class AudioListTableViewController: UITableViewController,UITableViewDelegate, U
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            var dataitem = audioList[indexPath.row]
-            var delFileName = dataitem["audioName"]
+            var dataitem = audioList![indexPath.row]
+            let delFileName = dataitem["audioName"]
             Macro.deleteAudioFile(delFileName!)
-            audioList.removeAtIndex(indexPath.row)
+            audioList!.removeAtIndex(indexPath.row)
             Macro.prefs.setObject(audioList, forKey: Macro.saveKey)
             Macro.prefs.synchronize()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)

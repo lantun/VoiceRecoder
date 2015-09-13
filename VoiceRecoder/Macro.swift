@@ -14,13 +14,15 @@ struct Macro {
     static let second:Int = 60
     static let saveKey = "SaveRecoredAudioList"
     static func deleteAudioFile(audioFileName:String) {
-        var fileManager = NSFileManager.defaultManager()
+        let fileManager = NSFileManager.defaultManager()
         var dirPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var docsDir: AnyObject = dirPaths[0]
-        var filePath = docsDir.stringByAppendingPathComponent("\(audioFileName).caf")
+        let docsDir: AnyObject = dirPaths[0]
+        let filePath = docsDir.stringByAppendingPathComponent("\(audioFileName).caf")
         if fileManager.fileExistsAtPath(filePath) {
-            if fileManager.removeItemAtPath(filePath, error: nil) {
+            do {
+                try fileManager.removeItemAtPath(filePath)
                 UIAlertView(title: "Delete!", message: "Audio deleted successfully", delegate: nil, cancelButtonTitle: "OK").show()
+            } catch _ {
             }
         }
         

@@ -30,9 +30,15 @@ class AudioPlayViewController: UIViewController,AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var session = AVAudioSession.sharedInstance()
-        session.setCategory(AVAudioSessionCategoryPlayback, error: nil)
-        session.setActive(true, error: nil)
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayback)
+        } catch _ {
+        }
+        do {
+            try session.setActive(true)
+        } catch _ {
+        }
         currentIndex = selectIndex
         audioList = Macro.prefs.objectForKey(Macro.saveKey) as! [AnyObject]
         setupAudioPlayer(selectIndex)
@@ -45,8 +51,11 @@ class AudioPlayViewController: UIViewController,AVAudioPlayerDelegate {
     }
     override func viewDidDisappear(animated: Bool) {
         
-        var session = AVAudioSession.sharedInstance()
-        session.setActive(false, error: nil)
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setActive(false)
+        } catch _ {
+        }
         stopAudioAction(0)
         super.viewDidDisappear(true)
     }
@@ -80,7 +89,7 @@ class AudioPlayViewController: UIViewController,AVAudioPlayerDelegate {
 
     @IBAction func playAudioAction(sender: AnyObject) {
         if currentIndex <= (audioList.count-1) {
-            var tmpBtn:UIButton = sender as! UIButton
+            let tmpBtn:UIButton = sender as! UIButton
             if tmpBtn.currentTitle == "Play Audio" {
                 if audioPlayingFlag == 0 {
                     setupAudioPlayer(currentIndex)
@@ -104,28 +113,29 @@ class AudioPlayViewController: UIViewController,AVAudioPlayerDelegate {
         }
     }
     @IBAction func audioSliderAction(sender: AnyObject) {
-        var slider:UISlider! = sender as! UISlider
+        let slider:UISlider! = sender as! UISlider
         secondCount = Int(slider.value)
         audioRemainSecond = audioTotalSecond
         audioRemainSecond = audioRemainSecond-secondCount
         audioPlayer.currentTime = Double(slider.value)
-        var sec = audioRemainSecond%Macro.second
-        var minute = audioRemainSecond%(Macro.second*Macro.second)/Macro.second
-        var hour = audioRemainSecond/(Macro.second*Macro.second)
+        let sec = audioRemainSecond%Macro.second
+        let minute = audioRemainSecond%(Macro.second*Macro.second)/Macro.second
+        let hour = audioRemainSecond/(Macro.second*Macro.second)
         audioRemainLengthLabel.text = "\(hour):\(minute):\(sec)"
     }
     
     func setupAudioPlayer(current_index:Int) {
+        
         stopAudioAction(0)
         currentIndex = current_index
         var currentAudioItem = audioList[currentIndex] as! [String:String!]
-        var fileName: String! = currentAudioItem["audioName"]
+        let fileName: String! = currentAudioItem["audioName"]
         audioNameLabel.text = fileName
         audioLengthLabel.text = currentAudioItem["audioLength"]
         audioRemainLengthLabel.text = audioLengthLabel.text
         
         secondCount = 0;
-        audioTotalSecond = currentAudioItem["audioTotalSecond"]!.toInt()
+        audioTotalSecond = Int(currentAudioItem["audioTotalSecond"]!)
         audioRemainSecond = audioTotalSecond
         
         audioSlider.minimumValue = 0.0
@@ -133,16 +143,15 @@ class AudioPlayViewController: UIViewController,AVAudioPlayerDelegate {
         audioSlider.continuous = true
         audioSlider.value = 0.0
         
-        var dirPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
-        var docsDir: AnyObject = dirPaths[0]
+        let dirPaths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let docsDir: String = dirPaths[0]
         
-        var audioFilePath = docsDir.stringByAppendingPathComponent(fileName.stringByAppendingString(".caf"))
-        var audioSoundUrl:NSURL = NSURL(fileURLWithPath: audioFilePath)!
-        var error:NSError!
-        audioPlayer = AVAudioPlayer(contentsOfURL: audioSoundUrl, error: NSErrorPointer(&error))
-        if error != nil {
-            println("\(error.userInfo)")
-            return
+        let audioFilePath =  docsDir + "/" + fileName + ".caf"
+        let audioSoundUrl:NSURL = NSURL.fileURLWithPath(audioFilePath, isDirectory: true)
+        do {
+            audioPlayer = try AVAudioPlayer.init(contentsOfURL: audioSoundUrl)
+        } catch let error1 as NSError {
+            print("init audioPlayer error:\(error1.userInfo)")
         }
         audioPlayer.delegate = self
         audioPlayer.volume = 1.0
@@ -160,9 +169,9 @@ class AudioPlayViewController: UIViewController,AVAudioPlayerDelegate {
             audioRemainSecond = 0
         }
         audioSlider.value = Float(secondCount)
-        var sec = audioRemainSecond%Macro.second
-        var minute = audioRemainSecond%(Macro.second*Macro.second)/Macro.second
-        var hour = audioRemainSecond/(Macro.second*Macro.second)
+        let sec = audioRemainSecond%Macro.second
+        let minute = audioRemainSecond%(Macro.second*Macro.second)/Macro.second
+        let hour = audioRemainSecond/(Macro.second*Macro.second)
         audioRemainLengthLabel.text = "\(hour):\(minute):\(sec)"
         
     }
@@ -176,7 +185,7 @@ class AudioPlayViewController: UIViewController,AVAudioPlayerDelegate {
         UIAlertView(title: "Alert!", message: "There is no more audio. Do you want to start from first?", delegate: self, cancelButtonTitle: "Ok").show()
     }
     
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         nextAudioAction(0)
     }
     /*
